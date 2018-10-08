@@ -24,8 +24,90 @@
 	<body>
 		<div class="reveal">
 			<div class="slides">
-				<section>Slide 1</section>
-				<section>Slide 2</section>
+
+<section data-markdown>
+# Unicode and You!
+
+## An Introduction to **Unicode** in **Python**
+
+by Eddie Antonio Santos
+</section>
+
+<!-- What IS Unicode? -->
+
+<section data-markdown>
+# What even *is* Unicode?
+</section>
+
+<!-- How to use Unicode in Python -->
+
+<section>
+	<h2> How to use Unicode in Python 3</h2>
+
+	<div class="fragment" data-markdown>
+```python
+>>> "Hello, World!"
+```
+	</div>
+</section>
+
+<section>
+	<h2> How to use Unicode in Python 2</h2>
+
+	<div class="fragment" data-markdown>
+```python
+>>> u"Hello, World!"
+```
+	</div>
+</section>
+
+<section>
+	<h2> How to <em>NOT</em> use Unicode in Python 2</h2>
+
+	<div class="fragment" data-markdown>
+```python
+>>> "Hello, World!"
+```
+	</div>
+</section>
+
+<section>
+	<h1> Recommendation </h1>
+
+	<p> Use <strong>Python 3</strong> </p>
+</section>
+
+<!-- A: Unicode U+xxxx and U+xxxxxx and names  -->
+<!-- Q: What is the difference between ASCII and Unicode? -->
+<!-- Q: What happens if I don't use the proper encoding? -->
+<!-- A: Confusion, Mojibake. -->
+<!-- Q: How do I explicitly specify the encoding? -->
+<!-- A: open(encoding=""), <html charset="UTF-8"> <xml encoding="UTF-8">
+	JSON: encoding /must/ be UTF-8 -> reject things that aren't valid UTF-8
+-->
+<!-- Q: What if I don't specify an encoding? -->
+<!-- A: Mojibake! Show common example of UTF-8 smart quotes rendered in Latin-1 -->
+<!-- Q: What if the language I need is not in Unicode? -->
+<!-- Q: How do I deal with mistakes in legacy code? -->
+<!-- Q: What are some tricks I can take advantage of? -->
+<!-- Q: Are there any downsides to these tricks? -->
+<!-- Q: How can I make it easier for future programmers to deal with my
+	encoding issue? -->
+<!-- A: Explicitly specify your encoding! Use UTF-8! -->
+<!-- Q: What do I do about symbols that really really resemble each other? -->
+<!-- A: Normalization - e.g., Greek semi-colon, Vietnamese, etc. -->
+<!-- A: Quick tip: MySQL: use utf8mb4 -->
+<!-- Q: What encoding should I use? -->
+<!-- A: UTF-8 -->
+<!-- Q: How do I test whether a system supports Unicode? -->
+<!-- A: Quick smoketest: Put in a 💩 emoji and try to get it back. Why? U+1F4A9 PILE OF POO. -->
+
+
+<section>
+	<h1> ASK ME QUESTIONS </h1>
+	<small> About Unicode, Python, and the intersection thereof! </small>
+</section>
+
 			</div>
 		</div>
 
