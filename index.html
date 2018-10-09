@@ -28,6 +28,18 @@
 		<div class="reveal">
 			<div class="slides">
 
+<!-- preparation:
+
+	1. Open in Safari to render Cuneiform....
+
+	terminal open with a few tabs:
+
+		1. Python 2 prompt: "Dzień dobry" == u"Dzień dobry"
+		2. Python 3 prompt: s = "AΩ語𐎄"
+		3. Command line with export LC_ALL=fr_CA.ISO8859-1, and an editor
+
+-->
+
 <section>
 	<div data-markdown>
 # Unicode and You!
@@ -40,22 +52,60 @@ Eddie Antonio Santos
 <small>Special thanks to Jessica Malik!</small>
 </section>
 <!-- What IS Unicode? -->
-
+
 <section data-markdown>
 # What even *is* Unicode?
 </section>
+
+<section>
+	<h2>Isn't Unicode all those çɦåяäcṱǝrŝ that aren't in ASCII?</h2>
 
-<!-- TODO: run down misconceptions:
+	<p class="fragment">
+		No! It's all those characters <em>including</em> ASCII.
+	</p>
+</section>
+
+<section>
+	<h2>Isn't Unicode a <em>character encoding</em>?</h2>
 
-	- a character encoding?
-	- only the characters that are not ASCII
-	- "those people that make emoji"
--->
+	<p class="fragment">
+		No! It supports <em> many </em> character encodings!
+	</p>
+</section>
+
+<section>
+	<h2> Isn't Unicode that emoji 💩 company? </h2>
 
-<!-- A: (copy from ES6) -->
+	<p class="fragment">
+		Sort of! They are a <em>consortium</em> that standarizes text, characters, and
+		emoji!
+		</p>
+	</section>
+	
+	<section>
+	<h2> Unicode is frustrating </h2>
 
-<!-- Q: What is a code point -->
+	<p class="fragment">
+		Sometimes—But knowing is half the battle!
+	</p>
+</section>
+
+<section>
+	<h2> What is Unicode? </h2>
 
+	<ul>
+		<li class="fragment"> Standard for representing text in computers </li>
+		<li class="fragment"> Maps a <em>code point</em> to every character.
+			<span class="fragment"> Ever. </span>
+		</li>
+		<li class="fragment"> Database of properties for each character </li>
+	</ul>
+</section>
+
+<section data-markdown>
+	# How do I use Unicode in Python?
+</section>
+
 <!-- How to use Unicode in Python -->
 <section>
 	<h2> How to use Unicode in Python 3</h2>
@@ -81,7 +131,7 @@ Eddie Antonio Santos
 ```
 	</div>
 </section>
-
+
 <section>
 	<h2> How to use Unicode in Python 2*</h2>
 
@@ -107,21 +157,73 @@ u"Hello, 🌎!"
 	</div>
 	<small>*you must specify the source file's <code>coding</code> at the top of the file</small>
 </section>
-
+
 <section data-markdown>
 ## In Python 2:
 
 `"Dzień dobry!" != u"Dzień dobry!"`
 
 </section>
-
+
 <section>
 	<h1> Recommendation </h1>
 
 	<p> Use <strong>Python 3</strong> </p>
 </section>
+
+<section>
+	<h1> Unicode characters </h1>
+</section>
+
+<section>
+	<h1> What is a character? </h1>
 
+	<p class="fragment"> letter, digit, number, symbol </p>
+	<p class="fragment"> space, formatting, control character </p>
+</section>
+
 <!-- A: Unicode U+xxxx and U+xxxxxx and names  -->
+<section>
+	<h2> How are characters represented in Unicode? </h2>
+
+	<p class="fragment"> A number called a <strong>Code point</strong> </p>
+	<ul>
+		<li class="fragment"> A <span class="fragment">= U+0041</span> </li>
+		<li class="fragment"> Ω <span class="fragment">= U+03A9</span> </li>
+		<li class="fragment"> 語 <span class="fragment">= U+8A9E</span> </li>
+		<li class="fragment"> 𐎄  <span class="fragment">= U+10384</span> </li>
+	</ul>
+</section>
+
+<!-- Q: What is a code point -->
+<section>
+	<h2> How do I get code points in Python? </h2>
+	<p class="fragment"> <code> ord() </code> </p>
+	<!-- DEMO:
+	 s = "AΩ語𐎄"
+	-->
+</section>
+
+<section>
+	<h2> What other <em>properties</em> do characters have? </h2>
+	<p class="fragment">name: <code> unicodedata.name() </code> </p>
+	<!-- DEMO:
+		  from unicodedata import name, category
+	-->
+	<p class="fragment">general category: <code> unicodedata.category() </code> </p>
+</section>
+
+<section>
+	<h2> Typing Unicode characters in Python </h2>
+	<p class="fragment"> Directly! </p>
+	<p class="fragment"> By hex code: <code>"\uXXXX"</code> or <code>"\U000XXXXX"</code> </p>
+	<!-- DEMO:
+	 print('\U0001F4A9')
+	  "\N{LATIN CAPITAL LETTER E}"
+	  print('_'.join("\N{KANNADA LETTER TTHA") * 2)
+	-->
+	<p class="fragment"> By name: <code>"\N{NAME}"</code> </p>
+</section>
 <!-- Q: What is the difference between ASCII and Unicode? -->
 <!-- Q: What happens if I don't use the proper encoding? -->
 <!-- A: Confusion, Mojibake. -->
@@ -150,6 +252,12 @@ u"Hello, 🌎!"
 <section>
 	<h1> ASK ME QUESTIONS </h1>
 	<small> About Unicode, Python, and the intersection thereof! </small>
+</section>
+
+<section data-markdown>
+	# Extra links!
+
+	[Unicode! And how ES6 can help!](http://www.eddieantonio.ca/unicode-es6/)
 </section>
 
 			</div>
