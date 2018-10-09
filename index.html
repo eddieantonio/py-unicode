@@ -6,11 +6,11 @@
 
 		<title>Unicode and You! An Introduction to Unicode in Python</title>
 		<meta name="author" content="Eddie Antonio Santos, @eddieantonio">
-		<meta name="description" content="Slides for my how to use Unicode in Python 3.">
+		<meta name="description" content="Slides for an introduction to using Unicode in Python 3.">
 		<meta name="keywords" content="unicode, python, python3, encoding"/>
 
 		<link rel="stylesheet" href="css/reveal.css">
-		<link rel="stylesheet" href="css/theme/black.css">
+		<link rel="stylesheet" href="css/theme/night.css">
 
 		<!-- Theme used for syntax highlighting of code -->
 		<link rel="stylesheet" href="lib/css/zenburn.css">
@@ -66,7 +66,7 @@ Eddie Antonio Santos
 </section>
 
 <section>
-	<h2>Isn't Unicode a <em>character encoding</em>?</h2>
+	<h2>Isn't Unicode a <strong>character encoding</strong>?</h2>
 
 	<p class="fragment">
 		No! It supports <em> many </em> character encodings!
@@ -166,7 +166,7 @@ u"Hello, 🌎!"
 </section>
 
 <section>
-	<h1> Recommendation </h1>
+	<h2> Recommendation </h2>
 
 	<p> Use <strong>Python 3</strong> </p>
 </section>
@@ -176,7 +176,7 @@ u"Hello, 🌎!"
 </section>
 
 <section>
-	<h1> What is a character? </h1>
+	<h2> What is a character? </h2>
 
 	<p class="fragment"> letter, digit, punctuation, symbol </p>
 	<p class="fragment"> space, formatting, control character </p>
@@ -254,14 +254,15 @@ u"Hello, 🌎!"
 
 <section>
 	<h2> Explosion of character encodings! </h2>
-	<p class="fragment"> Latin-1 == ISO 8889-1 ⊆ Windows Code Page 1252 </p>
-	<p class="fragment"> ISO 8889-2 </p>
+	<p class="fragment"> Latin-1 == ISO 8859-1 ⊆ Windows Code Page 1252 </p>
+	<p class="fragment"> ISO 8859-2 </p>
 	<p class="fragment"> Windows Code Page 1251 </p>
 	<p class="fragment"> Macitosh Western == MacRoman </p>
 	<p class="fragment"> Shift-JIS (several) </p>
 	<p class="fragment"> EBCDIC (several) </p>
 	<p class="fragment"> GB 2312 </p>
 	<p class="fragment"> Big5 </p>
+	<p class="fragment"> ... </p>
 </section>
 
 <!-- start example -->
@@ -283,7 +284,7 @@ u"Hello, 🌎!"
 </section>
 
 <section>
-	<h1> Recommendation </h1>
+	<h2> Recommendation </h2>
 
 	<p> Use <strong>UTF-8</strong> character encoding </p>
 	<p class="fragment"> UTF-8 Supports ALL Unicode characters </p>
@@ -291,7 +292,7 @@ u"Hello, 🌎!"
 </section>
 
 <section>
-	<h1> Recommendation </h1>
+	<h2> Recommendation </h2>
 
 	<p> Always <strong>explictly</strong> specify the character encoding </p>
 <div class="fragment" data-markdown>
