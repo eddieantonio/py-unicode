@@ -237,18 +237,31 @@ u"Hello, 🌎!"
 <!-- Overview slide -->
 <section>
 	<img src="./assets/outside-world.png" alt="Outside world"
-		style="border: 0; box-shadow: none; max-width: 95vw">
+		style="border: 0; box-shadow: none">
 </section>
 
 <section>
 	<h2> Character Encoding </h2>
 	<p class="fragment"> code points ⬌ bytes </p>
+	<p class="fragment"> character != byte </p>
 </section>
 
 <!-- Encodings in the wild -->
 <section>
 	<img src="./assets/encoding-collage.png" alt="Character encodings"
 		style="border: 0; box-shadow: none; max-width: 95vw">
+</section>
+
+<section>
+	<h2> Explosion of character encodings! </h2>
+	<p class="fragment"> Latin-1 == ISO 8889-1 ⊆ Windows Code Page 1252 </p>
+	<p class="fragment"> ISO 8889-2 </p>
+	<p class="fragment"> Windows Code Page 1251 </p>
+	<p class="fragment"> Macitosh Western == MacRoman </p>
+	<p class="fragment"> Shift-JIS (several) </p>
+	<p class="fragment"> EBCDIC (several) </p>
+	<p class="fragment"> GB 2312 </p>
+	<p class="fragment"> Big5 </p>
 </section>
 
 <!-- start example -->
@@ -323,6 +336,7 @@ Content-Type: application/json; charset=utf-8
 	<h1> ASK ME QUESTIONS </h1>
 	<small> About Unicode, Python, and the intersection thereof! </small>
 </section>
+
 <!-- Q: What is the difference between ASCII and Unicode? -->
 <!-- Q: What happens if I don't use the proper encoding? -->
 <!-- A: Confusion, Mojibake. -->
@@ -347,11 +361,6 @@ Content-Type: application/json; charset=utf-8
 <!-- Q: How do I test whether a system supports Unicode? -->
 <!-- A: Quick smoketest: Put in a 💩 emoji and try to get it back. Why? U+1F4A9 PILE OF POO. -->
 
-
-<section>
-	<h1> ASK ME QUESTIONS </h1>
-	<small> About Unicode, Python, and the intersection thereof! </small>
-</section>
 
 <section data-markdown>
 	# Extra links!
