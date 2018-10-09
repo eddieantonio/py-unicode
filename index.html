@@ -1,10 +1,13 @@
 <!doctype html>
-<html>
+<html lang="en_CA">
 	<head>
-		<meta charset="utf-8">
+		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>reveal.js</title>
+		<title>Unicode and You! An Introduction to Unicode in Python</title>
+		<meta name="author" content="Eddie Antonio Santos, @eddieantonio">
+		<meta name="description" content="Slides for my how to use Unicode in Python 3.">
+		<meta name="keywords" content="unicode, python, python3, encoding"/>
 
 		<link rel="stylesheet" href="css/reveal.css">
 		<link rel="stylesheet" href="css/theme/black.css">
@@ -25,50 +28,91 @@
 		<div class="reveal">
 			<div class="slides">
 
-<section data-markdown>
+<section>
+	<div data-markdown>
 # Unicode and You!
 
 ## An Introduction to **Unicode** in **Python**
 
-by Eddie Antonio Santos
-</section>
+Eddie Antonio Santos
+	</div>
 
+<small>Special thanks to Jessica Malik!</small>
+</section>
 <!-- What IS Unicode? -->
 
 <section data-markdown>
 # What even *is* Unicode?
 </section>
 
-<!-- How to use Unicode in Python -->
+<!-- TODO: run down misconceptions:
 
+	- a character encoding?
+	- only the characters that are not ASCII
+	- "those people that make emoji"
+-->
+
+<!-- A: (copy from ES6) -->
+
+<!-- Q: What is a code point -->
+
+<!-- How to use Unicode in Python -->
 <section>
 	<h2> How to use Unicode in Python 3</h2>
 
 	<div class="fragment" data-markdown>
 ```python
->>> "Hello, World!"
+"Hello, World!"
+```
+	</div>
+	<div class="fragment" data-markdown>
+```python
+"Dzień dobry!"
+```
+	</div>
+	<div class="fragment" data-markdown>
+```python
+"ᑖᓂᓯ"
+```
+	</div>
+	<div class="fragment" data-markdown>
+```python
+"Hello, 🌎!"
 ```
 	</div>
 </section>
 
 <section>
-	<h2> How to use Unicode in Python 2</h2>
+	<h2> How to use Unicode in Python 2*</h2>
 
 	<div class="fragment" data-markdown>
 ```python
->>> u"Hello, World!"
+u"Hello, World!"
 ```
 	</div>
+	<div class="fragment" data-markdown>
+```python
+u"Dzień dobry!"
+```
+	</div>
+	<div class="fragment" data-markdown>
+```python
+u"ᑖᓂᓯ"
+```
+	</div>
+	<div class="fragment" data-markdown>
+```python
+u"Hello, 🌎!"
+```
+	</div>
+	<small>*you must specify the source file's <code>coding</code> at the top of the file</small>
 </section>
 
-<section>
-	<h2> How to <em>NOT</em> use Unicode in Python 2</h2>
+<section data-markdown>
+## In Python 2:
 
-	<div class="fragment" data-markdown>
-```python
->>> "Hello, World!"
-```
-	</div>
+`"Dzień dobry!" != u"Dzień dobry!"`
+
 </section>
 
 <section>
@@ -119,6 +163,7 @@ by Eddie Antonio Santos
 			// - https://github.com/hakimel/reveal.js#configuration
 			// - https://github.com/hakimel/reveal.js#dependencies
 			Reveal.initialize({
+				history: true,
 				dependencies: [
 					{ src: 'plugin/markdown/marked.js' },
 					{ src: 'plugin/markdown/markdown.js' },
