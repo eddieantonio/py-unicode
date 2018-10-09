@@ -28,15 +28,15 @@
 		<div class="reveal">
 			<div class="slides">
 
-<!-- preparation:
+<!-- Preparation:
 
 	1. Open in Safari to render Cuneiform....
 
-	terminal open with a few tabs:
+	Terminal open with a few tabs:
 
 		1. Python 2 prompt: "Dzień dobry" == u"Dzień dobry"
 		2. Python 3 prompt: s = "AΩ語𐎄"
-		3. Command line with export LC_ALL=fr_CA.ISO8859-1, and an editor
+		3. Command line with export LC_ALL=fr_CA.ISO8859-1, and an editor open to curie.py
 
 -->
 
@@ -77,7 +77,7 @@ Eddie Antonio Santos
 	<h2> Isn't Unicode that emoji 💩 company? </h2>
 
 	<p class="fragment">
-		Sort of! They are a <em>consortium</em> that standarizes text, characters, and
+		Sort of! They are a <em>consortium</em> that standardizes text, characters, and
 		emoji!
 		</p>
 	</section>
@@ -257,7 +257,7 @@ u"Hello, 🌎!"
 	<p class="fragment"> Latin-1 == ISO 8859-1 ⊆ Windows Code Page 1252 </p>
 	<p class="fragment"> ISO 8859-2 </p>
 	<p class="fragment"> Windows Code Page 1251 </p>
-	<p class="fragment"> Macitosh Western == MacRoman </p>
+	<p class="fragment"> Macintosh Western == MacRoman </p>
 	<p class="fragment"> Shift-JIS (several) </p>
 	<p class="fragment"> EBCDIC (several) </p>
 	<p class="fragment"> GB 2312 </p>
@@ -271,9 +271,9 @@ u"Hello, 🌎!"
 	<img src="./assets/Marie_Curie_(Nobel-Chem).jpg" alt="Marie Curie"
 		style="max-height: 60vh">
 	<!-- DEMO: curie.py
-		1. make sure LC_ALL is set to "fr_CA.ISO8859-1"
-		2. run the program to save the file
-		3. open up the file in an editor
+		1. Make sure LC_ALL is set to "fr_CA.ISO8859-1"
+		2. Run the program to save the file
+		3. Open up the file in an editor
 		4. Now, add "Skłodowska" to it.
 		5. Run the program again. Discuss the error.
 		6. Delete "Skłodowska" and add "œ" to "boef"
@@ -294,7 +294,7 @@ u"Hello, 🌎!"
 <section>
 	<h2> Recommendation </h2>
 
-	<p> Always <strong>explictly</strong> specify the character encoding </p>
+	<p> Always <strong>explicitly</strong> specify the character encoding </p>
 <div class="fragment" data-markdown>
 ```python
 # -*- coding: UTF-8 -*-
