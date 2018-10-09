@@ -234,8 +234,21 @@ u"Hello, 🌎!"
 	<h1> Unicode outside of Python </h1>
 </section>
 
-<!-- TODO: overview slide -->
+<!-- Overview slide -->
 <section>
+	<img src="./assets/outside-world.png" alt="Outside world"
+		style="border: 0; box-shadow: none; max-width: 95vw">
+</section>
+
+<section>
+	<h2> Character Encoding </h2>
+	<p class="fragment"> code points ⬌ bytes </p>
+</section>
+
+<!-- Encodings in the wild -->
+<section>
+	<img src="./assets/encoding-collage.png" alt="Character encodings"
+		style="border: 0; box-shadow: none; max-width: 95vw">
 </section>
 
 <!-- start example -->
@@ -260,9 +273,10 @@ u"Hello, 🌎!"
 	<h1> Recommendation </h1>
 
 	<p> Use <strong>UTF-8</strong> character encoding </p>
-	<p class="fragment">UTF-8 Supports ALL Unicode characters </p>
+	<p class="fragment"> UTF-8 Supports ALL Unicode characters </p>
+	<p class="fragment"> Backwards compatible with ASCII </p>
 </section>
-
+
 <section>
 	<h1> Recommendation </h1>
 
@@ -295,11 +309,13 @@ Content-Type: application/json; charset=utf-8
 </section>
 
 <section>
-	<h1> Recommendations </h1>
+	<h1> Recap </h1>
 	<ul>
-		<li class="fragment"> Use Python 3 </li>
-		<li class="fragment"> Use UTF-8 </li>
-		<li class="fragment"> Explicitly specify character encoding </li>
+		<li class="fragment"> Unicode characters are <strong>code points</strong> (numbers) </li>
+		<li class="fragment"> <strong>Character encodings</strong> convert Unicode and bytes </li>
+		<li class="fragment"> <strong>Recommendation</strong>: Use Python 3 </li>
+		<li class="fragment"> <strong>Recommendation</strong>: Use UTF-8 </li>
+		<li class="fragment"> <strong>Recommendation</strong>: Explicitly specify character encoding </li>
 	</ul>
 </section>
 
