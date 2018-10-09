@@ -178,7 +178,7 @@ u"Hello, 🌎!"
 <section>
 	<h1> What is a character? </h1>
 
-	<p class="fragment"> letter, digit, number, symbol </p>
+	<p class="fragment"> letter, digit, punctuation, symbol </p>
 	<p class="fragment"> space, formatting, control character </p>
 </section>
 
@@ -193,6 +193,11 @@ u"Hello, 🌎!"
 		<li class="fragment"> 語 <span class="fragment">= U+8A9E</span> </li>
 		<li class="fragment"> 𐎄  <span class="fragment">= U+10384</span> </li>
 	</ul>
+	<p class="fragment">1,114,112 total; 137,374 (12.33%) used <br>
+	<small>
+		(<a href="http://www.unicode.org/versions/Unicode11.0.0/">As of version 11.0</a>)
+	</small>
+	</p>
 </section>
 
 <!-- Q: What is a code point -->
@@ -200,7 +205,7 @@ u"Hello, 🌎!"
 	<h2> How do I get code points in Python? </h2>
 	<p class="fragment"> <code> ord() </code> </p>
 	<!-- DEMO:
-	 s = "AΩ語𐎄"
+	s = "AΩ語𐎄"
 	-->
 </section>
 
@@ -208,7 +213,7 @@ u"Hello, 🌎!"
 	<h2> What other <em>properties</em> do characters have? </h2>
 	<p class="fragment">name: <code> unicodedata.name() </code> </p>
 	<!-- DEMO:
-		  from unicodedata import name, category
+		from unicodedata import name, category
 	-->
 	<p class="fragment">general category: <code> unicodedata.category() </code> </p>
 </section>
@@ -218,17 +223,95 @@ u"Hello, 🌎!"
 	<p class="fragment"> Directly! </p>
 	<p class="fragment"> By hex code: <code>"\uXXXX"</code> or <code>"\U000XXXXX"</code> </p>
 	<!-- DEMO:
-	 print('\U0001F4A9')
-	  "\N{LATIN CAPITAL LETTER E}"
-	  print('_'.join("\N{KANNADA LETTER TTHA") * 2)
+	print('\U0001F4A9')
+	"\N{LATIN CAPITAL LETTER E}"
+	print('_'.join("\N{KANNADA LETTER TTHA") * 2)
 	-->
 	<p class="fragment"> By name: <code>"\N{NAME}"</code> </p>
+</section>
+
+<section>
+	<h1> Unicode outside of Python </h1>
+</section>
+
+<!-- TODO: overview slide -->
+<section>
+</section>
+
+<!-- start example -->
+<section>
+	<h2> A letter written by Madame <strong>Marie Curie</strong> </h2>
+	<img src="./assets/Marie_Curie_(Nobel-Chem).jpg" alt="Marie Curie"
+		style="max-height: 60vh">
+	<!-- DEMO: curie.py
+		1. make sure LC_ALL is set to "fr_CA.ISO8859-1"
+		2. run the program to save the file
+		3. open up the file in an editor
+		4. Now, add "Skłodowska" to it.
+		5. Run the program again. Discuss the error.
+		6. Delete "Skłodowska" and add "œ" to "boef"
+		7. Run the program again.
+
+		Fix both issues with UTF-8.
+	-->
+</section>
+
+<section>
+	<h1> Recommendation </h1>
+
+	<p> Use <strong>UTF-8</strong> character encoding </p>
+	<p class="fragment">UTF-8 Supports ALL Unicode characters </p>
+</section>
+
+<section>
+	<h1> Recommendation </h1>
+
+	<p> Always <strong>explictly</strong> specify the character encoding </p>
+<div class="fragment" data-markdown>
+```python
+# -*- coding: UTF-8 -*-
+```
+</div>
+<div class="fragment" data-markdown>
+```python
+open("filename", "w", encoding="UTF-8")
+```
+</div>
+<div class="fragment" data-markdown>
+```python
+socket.write("¿Qué haremos mañana?".encode("UTF-8"))
+```
+</div>
+<div class="fragment" data-markdown>
+```html
+&lt;meta charset="UTF-8"&gt;
+```
+</div>
+<div class="fragment" data-markdown>
+```http
+Content-Type: application/json; charset=utf-8
+```
+</div>
+</section>
+
+<section>
+	<h1> Recommendations </h1>
+	<ul>
+		<li class="fragment"> Use Python 3 </li>
+		<li class="fragment"> Use UTF-8 </li>
+		<li class="fragment"> Explicitly specify character encoding </li>
+	</ul>
+</section>
+
+<section>
+	<h1> ASK ME QUESTIONS </h1>
+	<small> About Unicode, Python, and the intersection thereof! </small>
 </section>
 <!-- Q: What is the difference between ASCII and Unicode? -->
 <!-- Q: What happens if I don't use the proper encoding? -->
 <!-- A: Confusion, Mojibake. -->
 <!-- Q: How do I explicitly specify the encoding? -->
-<!-- A: open(encoding=""), <html charset="UTF-8"> <xml encoding="UTF-8">
+<!-- A: open(encoding="UTF-8"), <html charset="UTF-8"> <xml encoding="UTF-8">
 	JSON: encoding /must/ be UTF-8 -> reject things that aren't valid UTF-8
 -->
 <!-- Q: What if I don't specify an encoding? -->
@@ -272,6 +355,7 @@ u"Hello, 🌎!"
 			// - https://github.com/hakimel/reveal.js#dependencies
 			Reveal.initialize({
 				history: true,
+				slideNumber: true,
 				dependencies: [
 					{ src: 'plugin/markdown/marked.js' },
 					{ src: 'plugin/markdown/markdown.js' },
