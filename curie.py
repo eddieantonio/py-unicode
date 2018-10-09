@@ -1,9 +1,10 @@
+# -*- coding: UTF-8 -*-
 
 with open('letter.txt', 'w') as letter:
     letter.write("""
         Chère Madame,
 
-        Et maintenant  le voyage a la supermarche!
+        Et maintenant le voyage a la supermarche!
         Pamplemousse
         Ananas
         Jus d'orange
@@ -14,7 +15,7 @@ with open('letter.txt', 'w') as letter:
         Baguette
 
         Salutations distinguées,
-        Marie Skłodowska Curie
+        Marie Curie
     """)
 
 # Lyrics by McKenzie, Bret Peter T, and Clement, Jemaine Atea Mahana
